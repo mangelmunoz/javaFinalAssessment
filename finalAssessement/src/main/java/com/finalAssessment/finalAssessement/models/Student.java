@@ -1,5 +1,6 @@
 package com.finalAssessment.finalAssessement.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,12 +22,16 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private Integer firstName;
+    @Column(length = 25)
+    private String firstName;
 
+    @Column(length = 25)
     private String lastName;
 
+    @Column(length = 20)
     private String phoneNumber;
 
+    @Column(length = 25)
     @Email
     private String email;
 

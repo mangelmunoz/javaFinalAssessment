@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/student")
+@RequestMapping(path = "/api/student")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
-    @GetMapping(value = "/all")
+    @GetMapping(path = "/all")
     public List<Student> getAllStudents(){
         return new ArrayList<>();
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(path = "/add")
     public Student postStudent(@RequestBody Student student){
         return studentService.addStudent(student);
     }
