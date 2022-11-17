@@ -1,21 +1,17 @@
 package com.finalAssessment.finalAssessement;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.responseSpecification;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.finalAssessment.finalAssessement.exceptions.WrongSyntaxEmailException;
 import com.finalAssessment.finalAssessement.models.Student;
 import com.finalAssessment.finalAssessement.services.StudentService;
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
-import java.lang.reflect.Type;
 import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,15 +91,5 @@ class FinalAssessementApplicationTests {
 					.then().extract().body().as(Student.class);
 		});
 	}
-
-
-
-
-
-//	extract
-//	contentype
-//			as(Student.class)
-
-
 
 }
