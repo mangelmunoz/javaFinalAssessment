@@ -25,7 +25,7 @@ public class StudentService {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(student.getEmail());
         if(!matcher.matches()){
-            throw new WrongSyntaxEmailException("The email is not Valid");
+            throw new WrongSyntaxEmailException("The email is not valid");
         }
         return studentRepository.save(student);
     }
