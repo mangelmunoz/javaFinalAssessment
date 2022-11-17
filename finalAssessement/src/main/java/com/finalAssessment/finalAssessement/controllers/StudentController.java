@@ -1,5 +1,6 @@
 package com.finalAssessment.finalAssessement.controllers;
 
+import com.finalAssessment.finalAssessement.exceptions.WrongSyntaxEmailException;
 import com.finalAssessment.finalAssessement.models.Student;
 import com.finalAssessment.finalAssessement.services.StudentService;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class StudentController {
     }
 
     @PostMapping(path = "/add")
-    public Student postStudent(@RequestBody Student student){
+    public Student postStudent(@RequestBody Student student) throws WrongSyntaxEmailException {
         return studentService.addStudent(student);
     }
 
