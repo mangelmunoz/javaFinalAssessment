@@ -16,7 +16,7 @@ public class StudentService {
     public StudentRepository studentRepository;
 
     public List<Student> getStudents(){
-        return (List) studentRepository.findAll();
+        return studentRepository.findAll();
     }
 
     public Student addStudent(Student student) throws WrongSyntaxEmailException {

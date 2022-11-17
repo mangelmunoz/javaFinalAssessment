@@ -3,7 +3,6 @@ package com.finalAssessment.finalAssessement.controllers;
 import com.finalAssessment.finalAssessement.exceptions.WrongSyntaxEmailException;
 import com.finalAssessment.finalAssessement.models.Student;
 import com.finalAssessment.finalAssessement.services.StudentService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class StudentController {
 
     @GetMapping(path = "/all")
     public List<Student> getAllStudents(){
-        return new ArrayList<>();
+        return studentService.getStudents();
     }
 
     @PostMapping(path = "/add")
