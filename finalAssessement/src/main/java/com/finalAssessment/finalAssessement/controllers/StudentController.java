@@ -23,9 +23,9 @@ public class StudentController {
         return new ArrayList<>();
     }
 
-    @PostMapping
+    @PostMapping(value = "/add")
     public Student postStudent(@RequestBody Student student){
-        return studentService.addStudent();
+        return studentService.addStudent(student);
     }
 
 }
