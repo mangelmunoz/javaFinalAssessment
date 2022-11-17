@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -16,18 +17,22 @@ public class Student {
 
     @Column(length = 25)
     @NotNull
+    @NotEmpty
     private String firstName;
 
     @Column(length = 25)
     @NotNull
+    @NotEmpty
     private String lastName;
 
     @Column(length = 20)
     @NotNull
+    @NotEmpty
     private String phoneNumber;
 
     @Column(length = 25)
     @NotNull
+    @NotEmpty
     private String email;
 
     public Integer getId() {
