@@ -4,6 +4,7 @@ import com.finalAssessment.finalAssessement.exceptions.WrongSyntaxEmailException
 import com.finalAssessment.finalAssessement.models.Student;
 import com.finalAssessment.finalAssessement.services.StudentService;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class StudentController {
     }
 
     @PostMapping(path = "/add")
-    public ResponseEntity<Student> postStudent(@RequestBody Student student) throws WrongSyntaxEmailException {
+    public ResponseEntity<Student> postStudent(@Valid @RequestBody Student student) throws WrongSyntaxEmailException {
         return new ResponseEntity<>(studentService.addStudent(student), HttpStatus.CREATED);
     }
 
@@ -41,7 +42,7 @@ public class StudentController {
     }
 
     @PutMapping(path = "/update")
-    public ResponseEntity<Student> updateStudent(@RequestBody Student student) throws WrongSyntaxEmailException {
+    public ResponseEntity<Student> updateStudent(@Valid @RequestBody Student student) throws WrongSyntaxEmailException {
         return new ResponseEntity<>(studentService.updateStudent(student), HttpStatus.CREATED);
     }
 
